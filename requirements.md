@@ -1,5 +1,12 @@
  # Password Reset Requirements
 
+ ## Jira Tracking
+
+ - **Issue:** [KAN-2 - Implement Agentic SDLC automated documentation sync](https://namaalekhya9963.atlassian.net/browse/KAN-2)
+ - **Status:** In Progress
+ - **Project:** KAN (My Kanban Space)
+ - **Labels:** `agentic-sdlc`, `capstone`, `github-copilot`
+
 ## Project Overview
 
 This project enables users who have forgotten their passwords to securely regain access to their accounts through an identity-verification and password-reset flow.

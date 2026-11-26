@@ -1,5 +1,9 @@
 # Password Reset Service
 
+## Jira Work Item
+
+This implementation is tracked in Jira: [KAN-2 - Implement Agentic SDLC automated documentation sync](https://namaalekhya9963.atlassian.net/browse/KAN-2).
+
 ## Overview
 
 This project provides a password-reset web flow using an email reset link and SMS verification code. It includes password policy enforcement, password-history reuse prevention, reset expiration, abuse limits, audit events, and session revocation state.
