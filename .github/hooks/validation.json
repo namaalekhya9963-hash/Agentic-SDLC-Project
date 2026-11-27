@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "postToolUse": [
+      {
+        "type": "command",
+        "command": "node --test",
+        "timeoutSec": 15
+      }
+    ]
+  }
+}
