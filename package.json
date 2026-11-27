@@ -1,9 +1,8 @@
 {
-  "name": "password-reset-service",
+  "name": "agentic-sdlc-documentation-sync",
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node src/index.js",
     "test": "node --test"
   },
   "engines": {
