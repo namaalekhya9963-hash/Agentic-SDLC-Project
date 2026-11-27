@@ -4,7 +4,9 @@
 
 **Status: Local verification passed**
 
-The repository's Node.js test suite passed on 2026-11-27.
+The repository's Node.js test suite passed locally on 2026-11-27.
+GitHub Actions CI is configured in `.github/workflows/ci.yml`; remote CI
+execution must be confirmed after the workflow is pushed.
 
 ## Test Command
 
@@ -34,7 +36,7 @@ npm.cmd test
 
 ## Not Verified
 
-- GitHub Actions or another CI runner.
+- GitHub Actions remote execution after this workflow is pushed.
 - Production email and SMS provider integrations.
 - Production account, database, cache, session, KMS, and audit integrations.
 - Deployment, rollback, monitoring, accessibility, localization, performance, failover, and cross-region behavior.
