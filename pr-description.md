@@ -1,17 +1,25 @@
-# PR: Configure validation hook and link Jira KAN-2
+# PR: Complete Agentic SDLC capstone workflow artifacts
 
 ## Summary
 
-This change adds a post-tool-use validation hook that runs the existing Node.js test suite and links the workspace documentation to Jira issue KAN-2. It also records the change in the changelog and makes the reusable PR prompt require consistent evidence, limitations, and reviewer checks.
+This pull request adds the documented Agentic SDLC capstone workflow for a password-reset service and links the project lifecycle to Jira issue [KAN-2](https://namaalekhya9963.atlassian.net/browse/KAN-2). The repository now includes project requirements, architecture, implementation planning, design review, a password-reset implementation, integration tests, and validation configuration.
 
 ## Changes Made
 
-- `.github/hooks/validation.json` — adds a `postToolUse` command hook configured to run `node --test` with a 15-second timeout.
-- `CHANGELOG.md` — records the validation hook and Jira links under Unreleased.
-- `README.md` — links the project overview to Jira KAN-2.
-- `requirements.md` — adds Jira issue tracking metadata and link.
-- `.github/prompts/create-pr.prompt.md` — requires the five PR sections, accurate file inventory, and explicit reporting of missing documents.
-- `pr-description.md` — records this PR's description, local test evidence, limitations, and reviewer checklist.
+- `README.md` — documents the password-reset service, Jira work item, setup, API, and test commands.
+- `requirements.md` — defines the Jira tracking metadata, project overview, user story, requirements, business rules, dependencies, and acceptance criteria.
+- `architecture.md` — defines the high-level service architecture, component responsibilities, API design, database model, security controls, and scalability considerations.
+- `design-review.md` — records architecture strengths, risks, identified issues, approved improvements, and final review status.
+- `impl-plan.md` — provides prioritized implementation tasks, dependencies, blocked tasks, testing activities, and completion criteria.
+- `code-review.md` — records the implementation review scope, strengths, findings, and production gaps.
+- `verification.md` — records the local test command, passing result, verified behavior, and remaining verification gaps.
+- `docs/` — provides setup, API, testing, deployment, and documentation-index guides.
+- `src/` — contains the password-reset service entry point and password-reset implementation.
+- `tests/` — contains password-reset unit and integration coverage.
+- `.github/hooks/validation.json` — configures a post-tool-use hook to run `node --test` with a 15-second timeout.
+- `.github/prompts/create-pr.prompt.md` — requires consistent PR sections, file inventory, test evidence, limitations, and reviewer checks.
+- `CHANGELOG.md` — records the Jira and validation-hook additions under Unreleased.
+- `pr-description.md` — provides the committed pull-request summary and review record.
 
 ## Test Evidence
 
@@ -47,17 +55,20 @@ Command: `npm.cmd test`
 
 ## Known Limitations
 
-- This PR configures validation and Jira tracking; it does not implement source-to-destination automated documentation synchronization.
-- The requested Jira key `PROJ-KAN-2` was not found. The matching issue on the configured Jira site is [KAN-2](https://namaalekhya9963.atlassian.net/browse/KAN-2).
-- The Jira story's `docs/` lifecycle deliverables, Jira OAuth authorization verification, and merge criteria are not completed or verified by this PR. Existing lifecycle documents are at the repository root and describe the password-reset service.
-- `code-review.md` and `verification.md` were not found in the repository. Local tests were run for this PR, but no GitHub CI results are available yet.
-- The hook JSON and its command are valid and were exercised as `npm test` locally; execution by the target Copilot Agent Mode host has not been verified.
+- The repository documents and local implementation require provider, account, session, database, and secret-manager integration decisions before production deployment.
+- Existing application standards for performance, availability, accessibility, localization, compliance, and retention are not supplied and remain design assumptions.
+- The requested Jira key `PROJ-KAN-2` was not found. The matching Jira work item is [KAN-2](https://namaalekhya9963.atlassian.net/browse/KAN-2).
+- GitHub CI results are not yet available for this branch.
+- Execution of `.github/hooks/validation.json` by the target Copilot Agent Mode host has not been verified.
+- Production provider, account, database, cache, session, KMS, audit, monitoring, and deployment integrations remain to be supplied and verified.
 
 ## Reviewer Checklist
 
+- [ ] Review the requirements, architecture, design review, and implementation plan against Jira KAN-2.
+- [ ] Verify the password-reset API behavior and security controls described in the project documents.
 - [ ] Confirm the `postToolUse` hook event and command configuration are supported by the target Copilot Agent Mode version.
-- [ ] Confirm running `node --test` after each tool use is appropriate for this workspace and within the configured timeout.
-- [ ] Verify the README and requirements links resolve to Jira KAN-2.
+- [ ] Confirm the README and requirements links resolve to Jira KAN-2.
+- [ ] Confirm external provider credentials and application integration contracts are available before implementation tasks are completed.
 - [ ] Confirm the file inventory, test evidence, and limitations are accurate.
 - [ ] Confirm GitHub CI checks pass before approval.
 - [ ] Confirm no credentials or other secrets are included.
